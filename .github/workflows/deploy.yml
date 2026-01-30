@@ -46,7 +46,7 @@ jobs:
         run: |
             curl -s -X PUT \
             -H "Accept: application/vnd.github+json" \
-            -H "Authorization: Bearer $GITHUB_TOKEN" \
+            -H "Authorization: Bearer $GH_PAGES_TOKEN" \
             https://api.github.com/repos/${{ github.repository }}/pages \
             -d '{"source":{"branch":"gh-pages","path":"/"}}' \
             | jq .
