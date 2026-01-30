@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Debounce & Throttle Demo</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="wrap">
+    <h1>Debounce & Throttle Demo</h1>
+    <p class="muted">Try typing quickly to see debounce (wait for last) vs throttle (limit rate).</p>
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+      <label style="display:flex;align-items:center;gap:8px;" title="Toggle console debug logs">
+        <input id="debug-toggle" type="checkbox"> <span class="small">Debug console logs</span>
+      </label>
+    </div>
+    <div class="grid">
+      <section class="card">
+        <h2>Debounce</h2>
+        <div class="row">
+          <input id="deb-input" type="text" placeholder="type to debounce...">
+        </div>
+        <div class="row">
+          <label class="small">Delay(ms)</label>
+          <input id="deb-delay" type="number" value="300" min="0">
+        </div>
+        <div class="controls row">
+          <button id="deb-flush">Flush</button>
+          <button id="deb-cancel">Cancel</button>
+        </div>
+        <h3 class="small">Log</h3>
+        <div id="deb-log" class="log"></div>
+      </section>
+      <section class="card">
+        <h2>Throttle</h2>
+        <div class="row">
+          <input id="thr-input" type="text" placeholder="type to throttle...">
+        </div>
+        <div class="row">
+          <label class="small">Interval(ms)</label>
+          <input id="thr-delay" type="number" value="200" min="0">
+        </div>
+        <div class="controls row">
+          <button id="thr-flush">Flush</button>
+          <button id="thr-cancel">Cancel</button>
+        </div>
+        <h3 class="small">Log</h3>
+        <div id="thr-log" class="log"></div>
+      </section>
+    </div>
+    <div class="footer">Open this file in your browser (double-click <code>demo/index.html</code>), no bundler required.</div>
+  </div>
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
