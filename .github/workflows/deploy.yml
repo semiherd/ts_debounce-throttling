@@ -27,6 +27,11 @@ jobs:
       - name: Bundle demo
         run: npm run demo:bundle
 
+      - name: Stamp demo with deploy time (force redeploy)
+        run: |
+          mkdir -p demo
+          date -u +"%Y-%m-%dT%H:%M:%SZ" > demo/.deploy_timestamp
+
       - name: Deploy demo to gh-pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
