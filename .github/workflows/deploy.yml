@@ -39,7 +39,7 @@ jobs:
           branch: gh-pages # The branch the action should deploy to.
           folder: demo     # The folder the action should deploy.
           clean: true
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GH_PAGES_TOKEN }}
       - name: Ensure Github Pages is enabled for gh-pages
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
