@@ -40,7 +40,7 @@ jobs:
           folder: demo     # The folder the action should deploy.
           clean: true
           token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Ensure GitHub Pages is enabled for gh-pages
+      - name: Ensure Github Pages is enabled for gh-pages
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
