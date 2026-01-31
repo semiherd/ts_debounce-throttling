@@ -39,10 +39,12 @@ jobs:
           branch: gh-pages # The branch the action should deploy to.
           folder: demo     # The folder the action should deploy.
           clean: true
-          token: ${{ secrets.GH_PAGES_TOKEN }}
+          # use the repo-scoped GITHUB_TOKEN to perform the push (automatically provided)
+          token: ${{ secrets.GITHUB_TOKEN }}
       - name: Ensure Github Pages is enabled for gh-pages
         env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            # use the PAT stored in repo secrets (you must add GH_PAGES_TOKEN in repo settings)
+            GH_PAGES_TOKEN: ${{ secrets.GH_PAGES_TOKEN }}
         run: |
             curl -s -X PUT \
             -H "Accept: application/vnd.github+json" \
