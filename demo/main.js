@@ -1,4 +1,4 @@
-import { debounce, throttle } from './lib.mjs';
+import { debounce, throttle } from '../index.js';
 
 const $ = (sel) => document.querySelector(sel);
 
